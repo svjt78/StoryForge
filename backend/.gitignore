@@ -1,0 +1,38 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment files
+.env
+.venv/
+venv/
+env/
+.story_venv/
+story_venv/
+
+# VS Code settings
+.vscode/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Logs and local config
+*.log
+
+# macOS system files
+.DS_Store
+
+# Pytest cache
+.pytest_cache/
+
+# SQLite or other local DBs
+*.sqlite3
+
+# Jupyter Notebooks (if applicable)
+.ipynb_checkpoints/
+
+# Python virtual environment folders
+pip-wheel-metadata/

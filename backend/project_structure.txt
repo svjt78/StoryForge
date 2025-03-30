@@ -1,0 +1,14 @@
+.
+├── __pycache__
+│   ├── db.cpython-310.pyc
+│   ├── main.cpython-310.pyc
+│   ├── models.cpython-310.pyc
+│   └── story_generator.cpython-310.pyc
+├── db.py
+├── main.py
+├── models.py
+├── project_structure.txt
+├── requirements.txt
+└── story_generator.py
+
+2 directories, 10 files
