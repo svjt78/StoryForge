@@ -1,9 +1,10 @@
 // pages/new-story.js
 import Head from 'next/head'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { useRouter } from 'next/router'
 import Navbar from '../components/Navbar'
 import MetadataModal from '../components/MetadataModal'  // Import the reusable metadata modal
+import { AuthContext } from '../components/AuthContext'
 
 export default function NewStory() {
   // ----------- STATE -----------
@@ -56,6 +57,9 @@ export default function NewStory() {
   const [questions, setQuestions] = useState([])
   const [qaResponses, setQaResponses] = useState([])
   const [showWarningModal, setShowWarningModal] = useState(false)
+
+  // Access authentication state from context
+  const { isAuthenticated } = useContext(AuthContext)
 
   // Helper function to parse and clean the plain text output.
   // Expected output from the API:
@@ -203,9 +207,13 @@ export default function NewStory() {
     setQaResponses(Array(questions.length).fill(''));
   };
 
-  // Toggle collapsible panel.
+  // Toggle collapsible panel with login check.
   const togglePanel = () => {
-    setCollapsed(!collapsed);
+    if (!isAuthenticated) {
+      alert("Please Login");
+    } else {
+      setCollapsed(!collapsed);
+    }
   };
 
   // NEW ACTION HANDLER for Save modal.
